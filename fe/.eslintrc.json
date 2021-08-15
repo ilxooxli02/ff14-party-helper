@@ -1,0 +1,61 @@
+{
+  "extends": ["react-app", "react-app/jest", "plugin:import/typescript"],
+  "ignorePatterns": ["src/consts/**/*.ts", "src/dto/**/*.ts", "build"],
+  "plugins": ["@typescript-eslint", "eslint-plugin-import"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "no-script-url": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "import/no-unresolved": "error",
+    "import/no-duplicates": "error",
+    "import/no-unused-modules": "error",
+    "import/no-absolute-path": "error",
+    "import/no-self-import": "error",
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "internal", "external", "sibling", "parent", "index"],
+        "pathGroups": [
+          { "pattern": "react", "group": "external", "position": "before" },
+          { "pattern": "@coralblack/**", "group": "external", "position": "after" },
+          { "pattern": "@uifabric/**", "group": "external", "position": "after" },
+          { "pattern": "@fluentui/**", "group": "external", "position": "after" },
+          { "pattern": "@layouts/**", "group": "external", "position": "after" },
+          { "pattern": "@pages/**", "group": "external", "position": "after" },
+          { "pattern": "@hooks/**", "group": "external", "position": "after" },
+          { "pattern": "@selectors/**", "group": "external", "position": "after" },
+          { "pattern": "@states/**", "group": "external", "position": "after" },
+          { "pattern": "@nivo/*", "group": "index", "position": "after" },
+          { "pattern": "bignumber.js", "group": "index", "position": "after" },
+          { "pattern": "color", "group": "index", "position": "after" },
+          { "pattern": "dayjs", "group": "index", "position": "after" },
+          { "pattern": "lodash", "group": "index", "position": "after" },
+          { "pattern": "uuid", "group": "index", "position": "after" }
+        ],
+        "pathGroupsExcludedImportTypes": [],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+      }
+    ]
+  }
+}

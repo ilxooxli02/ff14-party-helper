@@ -1,0 +1,89 @@
+{
+  "name": "ff14-party-helper-fe",
+  "version": "0.0.1",
+  "author": "Randel",
+  "license": "Copyright 2021 Randel. All right reserved",
+  "scripts": {
+    "react-scripts": "react-app-rewired",
+    "start": "npm run build && serve build",
+    "start:dev": "PORT=55000 REACT_APP_STAGE=local REACT_APP_SERVICE_HOST=http://$(node localIp.js):55001 npm run react-scripts start",
+    "lint": "eslint ./"
+  },
+  "dependencies": {
+    "@coralblack/flax": "^0.1.6",
+    "react": "^17.0.2",
+    "react-dnd": "^14.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@coralblack/cyan": "^0.1.6",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.9",
+    "@types/bignumber.js": "^5.0.0",
+    "@types/color": "^3.0.1",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^12.19.9",
+    "@types/qs": "^6.9.6",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.5",
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "dotenv-cli": "^4.0.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.3.0",
+    "react-app-rewire-alias": "^1.0.3",
+    "react-app-rewired": "^2.1.8",
+    "react-scripts": "^4.0.3",
+    "serve": "^11.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0",
+    "typescript": "^4.2.3",
+    "web-vitals": "^1.1.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "prettier": {
+    "printWidth": 140,
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false,
+    "quoteProps": "as-needed",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "htmlWhitespaceSensitivity": "strict"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,md}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
