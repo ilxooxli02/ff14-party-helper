@@ -7,7 +7,8 @@
     "react-scripts": "react-app-rewired",
     "start": "npm run build && serve build",
     "start:dev": "PORT=55000 REACT_APP_STAGE=local REACT_APP_SERVICE_HOST=http://$(node localIp.js):55001 npm run react-scripts start",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix"
   },
   "dependencies": {
     "@coralblack/flax": "^0.1.6",

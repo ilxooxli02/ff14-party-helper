@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@controller/*": ["./src/controller/*"],
+      "@service/*": ["./src/service/*"],
+      "@model/*": ["./src/model/*"],
+      "@entity/*": ["./src/entity/*"],
+      "@helper/*": ["./src/helper/*"],
+    },
+    "plugins": [{ "transform": "typescript-transform-paths" }]
+  }
+}
