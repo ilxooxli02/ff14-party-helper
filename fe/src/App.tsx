@@ -7,7 +7,7 @@ import { ErrorLayout } from "@pages/system/layout/Error";
 
 
 const AuthLayout = lazy(() => import("@pages/auth/layout/Auth"));
-const Layout = lazy(() => import("@layouts/Index"));
+const HomeLayout = lazy(() => import("@layouts/Index"));
 
 function App() {
   const session = useStore<RootState>().getState().session;
@@ -28,7 +28,7 @@ function App() {
           <Switch>
             <Route exact={true} path="/404" component={ErrorLayout} />
             <AuthRoute session={session} authorizedOnly={false} path="/auth" component={AuthLayout} />
-            <AuthRoute session={session} authorizedOnly={true} denyRedirectTo="/auth" path="/" component={Layout} />
+            <AuthRoute session={session} authorizedOnly={false} denyRedirectTo="/auth" path="/" component={HomeLayout} />
             <Redirect from="*" to="/404" />
           </Switch>
         </Suspense>
