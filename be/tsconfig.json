@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": false,
+    "sourceMap": true,
+    "allowJs": true,
+    "declaration": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "target": "es2017",
+    "outDir": "build",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["es2017"],
+    "baseUrl": "./",
+    "paths": {
+      "@controller/*": ["./src/controller/*"],
+      "@service/*": ["./src/service/*"],
+      "@entity/*": ["./src/entity/*"],
+      "@model/*": ["./src/model/*"],
+      "@helper/*": ["./src/helper/*"],
+    },
+    "plugins": [{ "transform": "typescript-transform-paths" }],
+    "jsx": "react-jsx"
+  },
+  "include": ["src/**/*", "package.json"]
+}

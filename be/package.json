@@ -1,0 +1,38 @@
+{
+  "name": "ff14-party-helper-be",
+  "version": "0.0.1",
+  "author": "Randel",
+  "license": "Copyright 2021 Randel. All right reserved",
+  "scripts": {
+    "ts-node": "ts-node -r tsconfig-paths/register --files",
+    "start:dev": "nodemon -w ./ -w ../lib --ext ts,js,tsx --exec 'STAGE=local TZ=UTC npm run ts-node src/main.ts'",
+    "------": "echo 1",
+    "migrate:db:local": "dotenv -e .env.local -- knex-automigrate migrate:auto --knexfile ./migration/knexfile.js --cwd ./migration"
+  },
+  "dependencies": {
+    "@coralblack/cyan": "^0.1.8",
+    "axios": "^0.23.0",
+    "dotenv": "^10.0.0",
+    "source-map-support": "^0.5.19"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^12.19.9",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "gts": "^3.1.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "gts fix"
+  }
+}

@@ -1,0 +1,187 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Archivo Narrow", sans-serif;
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+
+  .app-layout {
+    min-width: 600px;
+    background-color: #dadada;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    .app-sidebar {
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+
+      visibility: visible;
+      transition-duration: 0.5s;
+      transform: translateX(0);
+
+      &.closed {
+        visibility: hidden;
+        transition-duration: 0.5s;
+        transform: translateX(-100%);
+      }
+
+      .app-sidebar-header {
+        height: 80px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .app-sidebar-close-btn {
+          cursor: pointer;
+          font-size: 3rem;
+          color: #dbd2a4;
+          width: 5rem;
+          height: 5rem;
+          text-align: center;
+          line-height: 5rem;
+
+          &:hover {
+            background-color: #262626;
+          }
+        }
+      }
+
+      .app-sidebar-menus {
+        ul {
+          list-style: none;
+          padding: 0;
+
+          li {
+            cursor: pointer;
+            border-top: 1px solid #dbd2a4;
+            height: 5rem;
+            font-size: 2rem;
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+
+            &:last-child {
+              border-bottom: 1px solid #dbd2a4;
+            }
+
+            &:hover {
+              background-color: #717171;
+            }
+          }
+        }
+      }
+    }
+
+    .app-header {
+      height: 80px;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .app-sidebar-menu-wrapper {
+        cursor: pointer;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &:hover {
+          background-color: #262626;
+        }
+
+        .app-sidebar-menu {
+          width: 3.2rem;
+          height: 0.35rem;
+          background-color: #dbd2a4;
+          border-radius: 1rem;
+
+          &:nth-child(2) {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+
+      span {
+        margin-left: 1rem;
+        display: inline-block;
+        font-size: 2.5rem;
+        color: #dbd2a4;
+        padding-bottom: 0.2rem;
+      }
+    }
+
+    .app-footer {
+      position: absolute;
+      bottom: 0px;
+      font-weight: lighter;
+      font-size: 0.75rem;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+.app-sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .main-door {
+    display: flex;
+    width: 30rem;
+    height: 10rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    div:first-child {
+      letter-spacing: -1.1px;
+      margin-bottom: -1.5rem;
+    }
+
+    div:last-child {
+    }
+  }
+
+  .sign-in-with-discord {
+    cursor: pointer;
+    box-shadow: 2.5px 2.5px 8px #505050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    border: 0px solid white;
+    background: #383838;
+    color: white;
+    font-weight: bold;
+
+    &::before {
+      content: "";
+      width: 70px;
+      height: 60px;
+      transform: scale(0.45);
+      background: url("../image/Discord-Logo-White.svg") no-repeat;
+    }
+  }
+}
