@@ -1,7 +1,7 @@
 import { userApi } from "ff14-party-helper-lib/dist/states/apis/user";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 import { FxGuard } from "@coralblack/flax";
-import Layout from "@layouts/Index";
+import HomeLayout from "@layouts/Home";
 import { useRoute } from "@hooks/useRoute";
 
 
@@ -19,7 +19,7 @@ export default function AuthLayout() {
 
   return (
     <>
-      <Layout hideHeader={true}>
+      <HomeLayout hideHeader={true}>
         <Switch>
           <Route
             path={match.url}
@@ -57,7 +57,7 @@ export default function AuthLayout() {
             }
           />
         </Switch>
-      </Layout>
+      </HomeLayout>
     </>
   );
 }

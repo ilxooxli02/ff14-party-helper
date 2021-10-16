@@ -7,7 +7,7 @@ import { ErrorLayout } from "@pages/system/layout/Error";
 
 
 const AuthLayout = lazy(() => import("@pages/auth/layout/Auth"));
-const HomeLayout = lazy(() => import("@layouts/Index"));
+const HomeLayout = lazy(() => import("@layouts/Home"));
 
 function App() {
   const session = useStore<RootState>().getState().session;
