@@ -1,5 +1,5 @@
 import React from "react";
-import { store } from "@lib/states";
+import { store } from "ff14-party-helper-lib/dist/states"
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import App from "./App";

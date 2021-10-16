@@ -5,8 +5,7 @@
       "@routes/*": ["./src/routes/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@lib/*": ["../lib/src/*"]
+      "@pages/*": ["./src/pages/*"]
     }
   }
 }

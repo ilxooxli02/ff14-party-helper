@@ -49,13 +49,7 @@
       {
         "groups": ["builtin", "internal", "external", "sibling", "parent", "object", "index"],
         "pathGroups": [
-          { "pattern": "@config/**", "group": "external", "position": "after" },
-          { "pattern": "@controller/**", "group": "external", "position": "after" },
-          { "pattern": "@service/**", "group": "external", "position": "after" },
-          { "pattern": "@model/**", "group": "external", "position": "after" },
-          { "pattern": "@entity/**", "group": "external", "position": "after" },
-          { "pattern": "@helper/**", "group": "external", "position": "after" },
-          { "pattern": "@error/**", "group": "external", "position": "after" },
+          { "pattern": "axios", "group": "index", "position": "after" },
         ],
         "pathGroupsExcludedImportTypes": [],
         "alphabetize": {

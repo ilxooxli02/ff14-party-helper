@@ -7,11 +7,14 @@
     "react-scripts": "react-app-rewired",
     "start": "npm run build && serve build",
     "start:dev": "PORT=55000 REACT_APP_STAGE=local REACT_APP_SERVICE_HOST=http://$(node localIp.js):55001 npm run react-scripts start",
+    "build": "npm run react-scripts build",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix"
   },
   "dependencies": {
     "@coralblack/flax": "^0.1.6",
+    "@reduxjs/toolkit": "^1.6.1",
+    "ff14-party-helper-lib": "github:ilxooxli02/ff14-party-helper-lib",
     "react": "^17.0.2",
     "react-dnd": "^14.0.2",
     "react-dom": "^17.0.2",

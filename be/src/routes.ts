@@ -1,4 +1,4 @@
-import { AuthenticateController } from "./auth/Authenticate.controller";
+import { AuthenticateController } from "./authenticate/Authenticate.controller";
 
 const routes = [
   AuthenticateController

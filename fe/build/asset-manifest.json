@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6ae21cef.chunk.css",
+    "main.js": "/static/js/main.8fba3e73.chunk.js",
+    "main.js.map": "/static/js/main.8fba3e73.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9a8ca1e1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9a8ca1e1.js.map",
+    "static/js/2.a2cce2ad.chunk.js": "/static/js/2.a2cce2ad.chunk.js",
+    "static/js/2.a2cce2ad.chunk.js.map": "/static/js/2.a2cce2ad.chunk.js.map",
+    "static/js/3.61a10e78.chunk.js": "/static/js/3.61a10e78.chunk.js",
+    "static/js/3.61a10e78.chunk.js.map": "/static/js/3.61a10e78.chunk.js.map",
+    "static/js/4.d835d579.chunk.js": "/static/js/4.d835d579.chunk.js",
+    "static/js/4.d835d579.chunk.js.map": "/static/js/4.d835d579.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.6ae21cef.chunk.css.map": "/static/css/main.6ae21cef.chunk.css.map",
+    "static/js/2.a2cce2ad.chunk.js.LICENSE.txt": "/static/js/2.a2cce2ad.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/Discord-Logo-White.9a823ca6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9a8ca1e1.js",
+    "static/js/2.a2cce2ad.chunk.js",
+    "static/css/main.6ae21cef.chunk.css",
+    "static/js/main.8fba3e73.chunk.js"
+  ]
+}

@@ -4,7 +4,7 @@ import { LoLang } from "../../consts/common";
 import { CreateAuthTokenResponse } from "../../dto/auth";
 
 // Set baseUrl
-setBaseUrl("http://127.0.0.1");
+setBaseUrl(process.env.REACT_APP_SERVICE_HOST || "http://127.0.0.1");
 
 export interface SessionState {
   token: string | null;

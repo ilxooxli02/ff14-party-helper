@@ -1,9 +1,8 @@
-import { userApi } from "@lib/states/apis/user";
-import { sessionSlice, SessionState } from "@lib/states/reducers/session";
+import { userApi } from "ff14-party-helper-lib/dist/states/apis/user";
+import { sessionSlice, SessionState } from "ff14-party-helper-lib/dist/states/reducers/session";
 import { useDispatch } from "react-redux";
 import { Redirect, Route, RouteProps } from "react-router-dom";
 import { FxGuard } from "@coralblack/flax";
-
 interface AuthRouteProps extends RouteProps {
   session: SessionState | null;
   authorizedOnly?: boolean;

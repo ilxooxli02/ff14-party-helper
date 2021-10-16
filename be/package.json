@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@coralblack/cyan": "^0.1.8",
+    "axios": "^0.23.0",
     "dotenv": "^10.0.0",
     "source-map-support": "^0.5.19"
   },
