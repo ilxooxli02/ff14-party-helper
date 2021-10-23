@@ -22,9 +22,6 @@ export function AuthRoute(props: AuthRouteProps) {
       ? true
       : false;
   
-  console.log("available :", available);
-  console.log("render :", render); 
-  
   return (
     <>
       <Route

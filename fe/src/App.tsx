@@ -27,8 +27,8 @@ function App() {
           }>
           <Switch>
             <Route exact={true} path="/404" component={ErrorLayout} />
+            <AuthRoute session={session} authorizedOnly={false} path="/" component={HomeLayout} />
             <AuthRoute session={session} authorizedOnly={false} path="/auth" component={AuthLayout} />
-            <AuthRoute session={session} authorizedOnly={false} denyRedirectTo="/auth" path="/" component={HomeLayout} />
             <Redirect from="*" to="/404" />
           </Switch>
         </Suspense>
