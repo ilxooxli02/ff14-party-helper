@@ -10,7 +10,7 @@ body {
 
   .app-home-layout {
     width: 740px;
-    background-color: #dadada;
+    background-color: #545050;
     height: 100vh;
     position: relative;
     overflow: hidden;
@@ -119,22 +119,35 @@ body {
       width: 70px;
     }
 
-    div[class^='duty-type-'] {
-      cursor: pointer;
-      box-shadow: inset 0.05rem 0.05rem #d6d6d6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 0.25rem;
-      text-align: center;
-      background: linear-gradient(0deg, #656565 50%, #b3b3b3);
-      color: white;
-      font-weight: lighter;
+    .duty-count {
+      display: inline-block;
+      color: #ffeed9;
       font-size: 0.9rem;
-      letter-spacing: -0.1rem;
-    
+      font-weight: lighter;
+    }
+  }
+}
+
+div[class^='duty-type-'] {
+  box-shadow: inset 0.05rem 0.05rem #d6d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  text-align: center;
+  background: linear-gradient(0deg, #656565 50%, #b3b3b3);
+  color: white;
+  font-weight: lighter;
+  font-size: 0.9rem;
+  letter-spacing: -0.1rem;
+
+  &.--small {
+    width: 30px;
+    height: 30px;
+
+    &.--clickable {
+      cursor: pointer;
+  
       &:hover {
         &::before {
           content: "";
@@ -145,105 +158,196 @@ body {
           overflow: hidden;
           opacity: 0.2;
         }
-        // border: 1px #ffce60 solid;
+      }
+    }
+  }
+
+  &.--medium {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.--selected {
+    border: 1.5px solid #ffd067;
+    background: linear-gradient(0deg, black 50%, #b3b3b3);
+  }
+}
+
+.duty-type-all {
+  width: 60px !important;
+
+  &::before {
+    width: 60px !important;
+  }
+
+  &::after {
+    display: inline;
+    content: "전체";
+  }
+}
+
+.duty-type-roulette {
+  background: url('../image/duties/Roulette.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-dungeon {
+  background: url('../image/duties/Dungeon.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-guildhest {
+  background: url('../image/duties/Guildhest.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-trial {
+  background: url('../image/duties/Trial.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-raid {
+  background: url('../image/duties/Raid.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-high-endduties {
+  background: url('../image/duties/High-endDuties.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-pvp {
+  background: url('../image/duties/PvP.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-questbattle {
+  background: url('../image/duties/QuestBattle.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-fate {
+  background: url('../image/duties/Fate.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-treasurehunt {
+  background: url('../image/duties/TreasureHunt.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-hunt {
+  background: url('../image/duties/Hunt.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-disciplesoftheland {
+  background: url('../image/duties/DisciplesOfTheLand.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-palaceofthedead {
+  background: url('../image/duties/PalaceOfTheDead.png') center center / 100% auto no-repeat !important;
+}
+
+.duty-type-eureka {
+  background: url('../image/duties/Eureka.png') center center / 100% auto no-repeat !important;
+}
+
+
+.duty-type-etc {
+  width: 60px !important;
+
+  &::before {
+    width: 60px !important;
+  }
+
+  &::after {
+    display: inline;
+    content: "기타";
+  }
+}
+
+.parties-wrapper {
+  margin-top: 1rem;
+
+  .parties {
+    border-collapse: collapse;
+
+    thead {
+      th {
+        border-bottom: 1px dashed #736e55;
+        padding: 0.25rem 0;
+        font-size: small;
+        font-weight: normal;
+        color: #9c977f;
+
+        &:first-child {
+          width: 5rem;
+        }
+
+        &:nth-child(2) {
+          width: 30rem;
+        }
+
+        &:last-child {
+          width: 10rem;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-child(2n-1) {
+          td {
+            padding-top: 0.5rem;
+            &:first-child {
+              div[class^='duty-type-'] {
+                margin: 0 auto;
+              }
+            }
+          }
+        }
+
+        &:nth-child(2n) {
+          td {
+            .party-desc-text {
+              display: inline-block;
+              width: 40rem;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              font-size: 0.9rem;
+              color: #bbbbbb;
+              font-weight: lighter;
+            }
+          }
+          
+        }
       }
 
-      &.--selected {
-        border: 1.5px solid #ffd067;
-        background: linear-gradient(0deg, black 50%, #b3b3b3);
+      .party-desc {
+        .party-desc-wrapper {
+          .party-title {
+            color: #5cb3ff;
+          }
+        }
       }
-    }
-    
-    .duty-type-all {
-      width: 60px !important;
-    
-      &::before {
-        width: 60px !important;
-      }
-    
-      &::after {
-        display: inline;
-        content: "전체";
-      }
-    }
-    
-    .duty-type-roulette {
-      background: url('../image/duties/Roulette.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-dungeon {
-      background: url('../image/duties/Dungeon.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-guildhest {
-      background: url('../image/duties/Guildhest.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-trial {
-      background: url('../image/duties/Trial.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-raid {
-      background: url('../image/duties/Raid.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-high-endduties {
-      background: url('../image/duties/High-endDuties.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-pvp {
-      background: url('../image/duties/PvP.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-questbattle {
-      background: url('../image/duties/QuestBattle.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-fate {
-      background: url('../image/duties/Fate.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-treasurehunt {
-      background: url('../image/duties/TreasureHunt.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-hunt {
-      background: url('../image/duties/Hunt.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-disciplesoftheland {
-      background: url('../image/duties/DisciplesOfTheLand.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-palaceofthedead {
-      background: url('../image/duties/PalaceOfTheDead.png') center center / 100% auto no-repeat !important;
-    }
-    
-    .duty-type-eureka {
-      background: url('../image/duties/Eureka.png') center center / 100% auto no-repeat !important;
-    }
-    
-    
-    .duty-type-etc {
-      width: 60px !important;
-    
-      &::before {
-        width: 60px !important;
-      }
-    
-      &::after {
-        display: inline;
-        content: "기타";
-      }
-    }
 
-    .duty-count {
-      display: inline-block;
-      color: #ffeed9;
-      font-size: 0.9rem;
-      font-weight: lighter;
+      .party-members {
+        padding: 0 0.125rem;
+
+        div[class^='role-'] {
+          margin-right: 0.125rem;
+        }
+      }
     }
   }
 }
 
+div[class^='role-'] {
+  width: 0.85rem;
+  height: 1.25rem;
+  border-radius: 0.2rem;
+  display: inline-block;
 
+  &.role-tanker {
+    background: #4139bb;
+  }
+
+  &.role-healer {
+    background: #548824;
+  }
+
+  &.role-dealer {
+    background: #8c2e2e;
+  }
+}

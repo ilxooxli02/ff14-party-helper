@@ -1,7 +1,13 @@
-import { Duty } from "ff14-party-helper-lib/dist/consts/duty";
+import { Duties, Duty, Role } from "ff14-party-helper-lib/dist/consts";
 
-function DutyIcon(props: {type: Duty}) {
-  return <div className={`duty-type-${props.type.toLocaleLowerCase()}`} />
+interface DutyIconProps { 
+  type: Duty, 
+  size?: "small" | "medium" | "large", 
+  clickable?: boolean
+};
+
+function DutyTypeIcon(props: DutyIconProps) {
+  return <div className={`duty-type-${props.type.toLocaleLowerCase()} --${props.size || "small"} ${props.clickable ? "--clickable" : ""}`} />
 }
 
 export default function PartyFindList() {
@@ -24,21 +30,287 @@ export default function PartyFindList() {
     { type: Duty.Etc, order: 15 }
   ];
 
+  const partiesMock = [
+    {
+      type: Duty.Dungeon,
+      duty: Duties.Dungeon.Paglthan.ko,
+      desc: "모집 설명이 들어가는 부분 모집 설명이 들어가는 부분 모집 설명이 들어가는 부분 모집 설명이 들어가는 부분 모집 설명이 들어가는 부분 모집 설명이 들어가는 부분 모집 설명이 들어가는 부분 모집 설명이 들어가는 부분 모집 설명이 들어가는 부분",
+      members: [
+        {
+          type: Role.Tanker,
+          isExist: false,
+        },
+        {
+          type: Role.Healer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+      ]
+    },
+    {
+      type: Duty.Dungeon,
+      duty: Duties.Dungeon.Paglthan.ko,
+      desc: "모집 설명이 들어가는 부분",
+      members: [
+        {
+          type: Role.Tanker,
+          isExist: false,
+        },
+        {
+          type: Role.Healer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+      ]
+    },
+    {
+      type: Duty.Dungeon,
+      duty: Duties.Dungeon.Paglthan.ko,
+      desc: "모집 설명이 들어가는 부분",
+      members: [
+        {
+          type: Role.Tanker,
+          isExist: false,
+        },
+        {
+          type: Role.Healer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+      ]
+    },
+    {
+      type: Duty.Dungeon,
+      duty: Duties.Dungeon.Paglthan.ko,
+      desc: "모집 설명이 들어가는 부분",
+      members: [
+        {
+          type: Role.Tanker,
+          isExist: false,
+        },
+        {
+          type: Role.Healer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+      ]
+    },
+    {
+      type: Duty.Dungeon,
+      duty: Duties.Dungeon.Paglthan.ko,
+      desc: "모집 설명이 들어가는 부분",
+      members: [
+        {
+          type: Role.Tanker,
+          isExist: false,
+        },
+        {
+          type: Role.Healer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+      ]
+    },
+    {
+      type: Duty.Dungeon,
+      duty: Duties.Dungeon.Paglthan.ko,
+      desc: "모집 설명이 들어가는 부분",
+      members: [
+        {
+          type: Role.Tanker,
+          isExist: false,
+        },
+        {
+          type: Role.Healer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+      ]
+    },
+    {
+      type: Duty.Dungeon,
+      duty: Duties.Dungeon.Paglthan.ko,
+      desc: "모집 설명이 들어가는 부분",
+      members: [
+        {
+          type: Role.Tanker,
+          isExist: false,
+        },
+        {
+          type: Role.Healer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+      ]
+    },
+    {
+      type: Duty.Dungeon,
+      duty: Duties.Dungeon.Paglthan.ko,
+      desc: "모집 설명이 들어가는 부분",
+      members: [
+        {
+          type: Role.Tanker,
+          isExist: false,
+        },
+        {
+          type: Role.Healer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+      ]
+    },
+    {
+      type: Duty.Dungeon,
+      duty: Duties.Dungeon.Paglthan.ko,
+      desc: "모집 설명이 들어가는 부분",
+      members: [
+        {
+          type: Role.Tanker,
+          isExist: false,
+        },
+        {
+          type: Role.Tanker,
+          isExist: false,
+        },
+        {
+          type: Role.Healer,
+          isExist: false,
+        },
+        {
+          type: Role.Healer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+        {
+          type: Role.Dealer,
+          isExist: false,
+        },
+      ]
+    }
+  ]
+
   return (
     <>
       {/* Categories */}
       <div className="duties-wrapper">
         { duties.sort((a, b) => a.order - b.order).map((duty, index) => 
           <div key={`${duty.type}-${index}`} className="duty-container">
-            <DutyIcon  type={duty.type} />
+            <DutyTypeIcon type={duty.type} size="small" clickable={true} />
             <span className="duty-count">1</span>
           </div>)
         }
       </div>
       {/* Parties */}
-      <div>
-        파티 찾기 게시글 영역
+      <div className="parties-wrapper">
+        <table className="parties">
+          <thead>
+            <tr>
+              <th></th>
+              <th>임무</th>
+              <th>모집 역할</th>
+            </tr>
+          </thead>
+          <tbody>
+            { 
+              partiesMock.map((party, index) => 
+                <>
+                  <tr key={index} className="party">
+                    <td rowSpan={2} className="party-duty">
+                      <DutyTypeIcon type={party.type} size="medium" />
+                    </td>
+                    <td className="party-desc">
+                      <div className="party-desc-wrapper">
+                        <div className="party-title">{party.duty}</div>
+                      </div>
+                    </td>
+                    <td className="party-members">
+                      { 
+                        party.members?.map((member, mIndex) =>
+                          <div key={`${index}-${mIndex}`} className={`role-${member.type.toLocaleLowerCase()}`}></div>
+                        )
+                      }
+                    </td>
+                  </tr>
+                  <tr key={`${index}-desc`}>
+                    <td colSpan={2}>
+                      <span className="party-desc-text">{party.desc}</span>
+                    </td>
+                  </tr>
+                </>
+              )
+            }
+          </tbody>
+        </table>
       </div>
+      {/* Paginatable */}
+      <div></div>
     </>
   );
 }
