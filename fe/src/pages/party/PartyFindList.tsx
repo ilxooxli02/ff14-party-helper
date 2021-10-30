@@ -259,6 +259,11 @@ export default function PartyFindList() {
 
   return (
     <>
+      {/* Search Options */}
+      <div className="duties-search-option-wrapper">
+        {/* TODO... */}
+        <div className="detail-search-button" />
+      </div>
       {/* Categories */}
       <div className="duties-wrapper">
         { duties.sort((a, b) => a.order - b.order).map((duty, index) => 
