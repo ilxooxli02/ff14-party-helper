@@ -113,7 +113,7 @@ body {
       margin-left: 0;
       width: 70px;
     }
-  
+
     &:last-child {
       margin-right: 0;
       width: 70px;
@@ -128,7 +128,7 @@ body {
   }
 }
 
-div[class^='duty-type-'] {
+div[class^="duty-type-"] {
   box-shadow: inset 0.05rem 0.05rem #d6d6d6;
   display: flex;
   align-items: center;
@@ -147,7 +147,7 @@ div[class^='duty-type-'] {
 
     &.--clickable {
       cursor: pointer;
-  
+
       &:hover {
         &::before {
           content: "";
@@ -187,61 +187,60 @@ div[class^='duty-type-'] {
 }
 
 .duty-type-roulette {
-  background: url('../image/duties/Roulette.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/Roulette.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-dungeon {
-  background: url('../image/duties/Dungeon.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/Dungeon.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-guildhest {
-  background: url('../image/duties/Guildhest.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/Guildhest.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-trial {
-  background: url('../image/duties/Trial.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/Trial.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-raid {
-  background: url('../image/duties/Raid.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/Raid.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-high-endduties {
-  background: url('../image/duties/High-endDuties.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/High-endDuties.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-pvp {
-  background: url('../image/duties/PvP.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/PvP.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-questbattle {
-  background: url('../image/duties/QuestBattle.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/QuestBattle.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-fate {
-  background: url('../image/duties/Fate.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/Fate.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-treasurehunt {
-  background: url('../image/duties/TreasureHunt.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/TreasureHunt.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-hunt {
-  background: url('../image/duties/Hunt.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/Hunt.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-disciplesoftheland {
-  background: url('../image/duties/DisciplesOfTheLand.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/DisciplesOfTheLand.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-palaceofthedead {
-  background: url('../image/duties/PalaceOfTheDead.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/PalaceOfTheDead.png") center center / 100% auto no-repeat !important;
 }
 
 .duty-type-eureka {
-  background: url('../image/duties/Eureka.png') center center / 100% auto no-repeat !important;
+  background: url("../image/duties/Eureka.png") center center / 100% auto no-repeat !important;
 }
-
 
 .duty-type-etc {
   width: 60px !important;
@@ -258,6 +257,7 @@ div[class^='duty-type-'] {
 
 .parties-wrapper {
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
 
   .parties {
     border-collapse: collapse;
@@ -290,7 +290,7 @@ div[class^='duty-type-'] {
           td {
             padding-top: 0.5rem;
             &:first-child {
-              div[class^='duty-type-'] {
+              div[class^="duty-type-"] {
                 margin: 0 auto;
               }
             }
@@ -310,7 +310,6 @@ div[class^='duty-type-'] {
               font-weight: lighter;
             }
           }
-          
         }
       }
 
@@ -325,7 +324,7 @@ div[class^='duty-type-'] {
       .party-members {
         padding: 0 0.125rem;
 
-        div[class^='role-'] {
+        div[class^="role-"] {
           margin-right: 0.125rem;
         }
       }
@@ -333,7 +332,114 @@ div[class^='duty-type-'] {
   }
 }
 
-div[class^='role-'] {
+.parties-paginatable {
+  border-top: 1px dashed #736e55;
+  border-bottom: 1px dashed #736e55;
+  padding: 0.25rem 0;
+  font-size: small;
+  font-weight: normal;
+  color: #9c977f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .left,
+  .right {
+    display: inline-block;
+    margin: 0 0.5rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  .left {
+    border-width: 15px 30px 15px 0;
+    border-color: transparent #736e55 transparent transparent;
+
+    &.--selectable {
+      cursor: pointer;
+      border-color: transparent #fff5c5 transparent transparent;
+    }
+  }
+
+  .right {
+    border-width: 15px 0 15px 30px;
+    border-color: transparent transparent transparent #736e55;
+
+    &.--selectable {
+      cursor: pointer;
+      border-color: transparent transparent transparent #fff5c5;
+    }
+  }
+
+  .current-item-range {
+    display: inline-block;
+    margin: 0.5rem;
+    position: absolute;
+    right: 0.5rem;
+
+    span {
+      display: inline-block;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #ffe9c0;
+      text-shadow: 0 0 1px orange;
+    }
+  }
+}
+
+.party-buttons {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .party-register-button {
+    display: flex;
+    width: 11rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background: linear-gradient(0deg, #88734e 50%, #ffd400);
+    box-shadow: inset 0rem 0.1rem 0.3rem #fffef4;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
+    text-shadow: 0 0 3px #3c3200;
+    cursor: pointer;
+  }
+
+  .parties-status-wrapper {
+    display: flex;
+    align-items: center;
+
+    .parties-refresh-button {
+      margin-right: 0.25rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: linear-gradient(0deg, #656565 50%, #b3b3b3);
+      box-shadow: inset 0.025rem 0.1rem #d6d6d6;
+      border-radius: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d2d2d2;
+      font-weight: 100;
+      font-size: 1.3rem;
+    }
+
+    .parties-count-info {
+      background: #424242;
+      border-radius: 0.25rem;
+      padding: 0.125rem 0.5rem;
+      color: white;
+      font-weight: lighter;
+    }
+  }
+}
+
+div[class^="role-"] {
   width: 0.85rem;
   height: 1.25rem;
   border-radius: 0.2rem;

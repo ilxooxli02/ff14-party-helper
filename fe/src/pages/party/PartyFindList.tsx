@@ -310,7 +310,21 @@ export default function PartyFindList() {
         </table>
       </div>
       {/* Paginatable */}
-      <div></div>
+      <div className="parties-paginatable">
+        <div className="left" />
+        <div className="right" />
+        <div className="current-item-range">
+          <span>1 - 10</span>
+        </div>
+      </div>
+      {/* Party Buttons */}
+      <div className="party-buttons">
+        <div className="party-register-button">파티 모집 등록</div>
+        <div className="parties-status-wrapper">
+          <div className="parties-refresh-button">&#8635;</div>
+          <div className="parties-count-info">10(123)</div>
+        </div>
+      </div>
     </>
   );
 }
