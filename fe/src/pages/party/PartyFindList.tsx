@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Duties, Duty, Role } from "ff14-party-helper-lib/dist/consts";
 
 interface DutyIconProps { 
@@ -280,8 +281,8 @@ export default function PartyFindList() {
           <tbody>
             { 
               partiesMock.map((party, index) => 
-                <>
-                  <tr key={index} className="party">
+                <Fragment key={index}>
+                  <tr className="party">
                     <td rowSpan={2} className="party-duty">
                       <DutyTypeIcon type={party.type} size="medium" />
                     </td>
@@ -298,12 +299,12 @@ export default function PartyFindList() {
                       }
                     </td>
                   </tr>
-                  <tr key={`${index}-desc`}>
+                  <tr>
                     <td colSpan={2}>
                       <span className="party-desc-text">{party.desc}</span>
                     </td>
                   </tr>
-                </>
+                </Fragment>
               )
             }
           </tbody>
@@ -319,7 +320,7 @@ export default function PartyFindList() {
       </div>
       {/* Party Buttons */}
       <div className="party-buttons">
-        <div className="party-register-button">파티 모집 등록</div>
+        <div className="party-register-button" onClick={() => console.log("clicked")}>파티 모집 등록</div>
         <div className="parties-status-wrapper">
           <div className="parties-refresh-button">&#8635;</div>
           <div className="parties-count-info">10(123)</div>
