@@ -330,8 +330,8 @@ div[class^="duty-type-"] {
         }
 
         &:nth-child(2n) {
-          td {
-            .party-desc-text {
+          .party-desc {
+            span {
               display: inline-block;
               width: 40rem;
               white-space: nowrap;
@@ -350,12 +350,8 @@ div[class^="duty-type-"] {
         }
       }
 
-      .party-desc {
-        .party-desc-wrapper {
-          .party-title {
-            color: #5cb3ff;
-          }
-        }
+      .party-title {
+        color: #5cb3ff;
       }
 
       .party-members {

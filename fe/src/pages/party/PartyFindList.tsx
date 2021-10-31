@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Duties, Duty, Role } from "ff14-party-helper-lib/dist/consts";
+import { useRoute } from "@hooks/useRoute";
 
 interface DutyIconProps { 
   type: Duty, 
@@ -12,6 +13,8 @@ function DutyTypeIcon(props: DutyIconProps) {
 }
 
 export default function PartyFindList() {
+  const { pushPath } = useRoute();
+  
   const duties = [
     { type: Duty.ALL, order: 0 },
     { type: Duty.Roulette, order: 1 },
@@ -291,10 +294,8 @@ export default function PartyFindList() {
                     <td rowSpan={2} className="party-duty">
                       <DutyTypeIcon type={party.type} size="medium" />
                     </td>
-                    <td className="party-desc">
-                      <div className="party-desc-wrapper">
-                        <div className="party-title">{party.duty}</div>
-                      </div>
+                    <td className="party-title">
+                      {party.duty}
                     </td>
                     <td className="party-members">
                       { 
@@ -305,8 +306,8 @@ export default function PartyFindList() {
                     </td>
                   </tr>
                   <tr>
-                    <td colSpan={2}>
-                      <span className="party-desc-text">{party.desc}</span>
+                    <td colSpan={2} className="party-desc">
+                      <span>{party.desc}</span>
                     </td>
                   </tr>
                 </Fragment>
@@ -325,7 +326,7 @@ export default function PartyFindList() {
       </div>
       {/* Party Buttons */}
       <div className="party-buttons">
-        <div className="party-register-button" onClick={() => console.log("clicked")}>파티 모집 등록</div>
+        <div className="party-register-button" onClick={() => pushPath("parties/register")}>파티 모집 등록</div>
         <div className="parties-status-wrapper">
           <div className="parties-refresh-button">&#8635;</div>
           <div className="parties-count-info">10(123)</div>

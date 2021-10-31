@@ -1,5 +1,6 @@
 import { Redirect, Route, Switch } from "react-router";
 import PartyFindList from "@pages/party/PartyFindList";
+import { PartyFindRegister } from "@pages/party/PartyFindRegister";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -22,7 +23,8 @@ export default function HomeLayout (props: LayoutProps) {
         {/* Content */}
         <div className="app-home-content">
           <Switch>
-            <Route path="/" component={() => <PartyFindList />} />
+            <Route exact={true} path="/parties" component={() => <PartyFindList />} />
+            <Route exact={true} path="/parties/register" component={() => <PartyFindRegister />} />
             <Redirect from="*" to="/404" />
           </Switch>
         </div>
