@@ -1,16 +1,7 @@
+import DutyTypeIcon from "@components/DutyTypeIcon";
 import { Fragment } from "react";
 import { Duties, Duty, Role } from "ff14-party-helper-lib/dist/consts";
 import { useRoute } from "@hooks/useRoute";
-
-interface DutyIconProps { 
-  type: Duty, 
-  size?: "small" | "medium" | "large", 
-  clickable?: boolean
-};
-
-function DutyTypeIcon(props: DutyIconProps) {
-  return <div className={`duty-type-${props.type.toLocaleLowerCase()} --${props.size || "small"} ${props.clickable ? "--clickable" : ""}`} />
-}
 
 export default function PartyFindList() {
   const { pushPath } = useRoute();
@@ -271,7 +262,7 @@ export default function PartyFindList() {
       <div className="duties-wrapper">
         { duties.sort((a, b) => a.order - b.order).map((duty, index) => 
           <div key={`${duty.type}-${index}`} className="duty-container">
-            <DutyTypeIcon type={duty.type} size="small" clickable={true} />
+            <DutyTypeIcon type={duty.type} size="medium" clickable={true} />
             <span className="duty-count">1</span>
           </div>)
         }
@@ -292,7 +283,7 @@ export default function PartyFindList() {
                 <Fragment key={index}>
                   <tr className="party">
                     <td rowSpan={2} className="party-duty">
-                      <DutyTypeIcon type={party.type} size="medium" />
+                      <DutyTypeIcon type={party.type} size="large" />
                     </td>
                     <td className="party-title">
                       {party.duty}
